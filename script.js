@@ -37,7 +37,7 @@ function chooseRandom(arr) {
 // DEEZER API CALL
 
 
-(function() {
+function deezerCall () {
   var testSearch = "sick tunes"
   var searchTerms = testSearch.split(' ').join('+')
   var url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/playlist?q=${searchTerms}`
@@ -52,12 +52,36 @@ function chooseRandom(arr) {
         var playlistImage = randomPlaylist.picture_medium; //  Returns selected playlist's cover
         //
         var tracklistLink = randomPlaylist.tracklist; //  Returns playlist tracklist link > for second call
-        var playlistTracklist = {}; //  Empty object to
+        console.log(randomPlaylist);
+        console.log(tracklistLink);
 
-        console.log(singlePlaylist);
-      }
+    }
+
   };
+
   xhr.open("GET", url, true);
   xhr.send();
 
-})()
+}
+
+// SECOND COSMIC API CALL TO NEW GALAXY
+
+function deezerCallTwo (tracklistLink) {
+var xhs = new XMLHttpRequest();
+xhs.onreadystatechange = function() {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+
+      var parsedTracklist = JSON.parse(xhs.responseText);
+
+      //console.log(parsedTracklist);
+    }
+
+  xhs.open("GET", tracklistLink , true);
+  xhs.send();
+
+  };
+
+};
+
+
+(deezerCall());
