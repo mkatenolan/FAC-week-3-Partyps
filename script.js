@@ -1,8 +1,7 @@
-
-var button = document.querySelector(".search-btn");
+var button = document.querySelector("#button-submit");
 
 button.addEventListener("click", function() {
-  var searchInput = document.querySelector(".search-query").value;
+  var searchInput = document.querySelector("#search-query").value;
   (function() {
     var xhr = new XMLHttpRequest();
 
@@ -14,13 +13,15 @@ button.addEventListener("click", function() {
       if (xhr.readyState == 4 && xhr.status == 200) {
         var recipeObj = JSON.parse(xhr.responseText);
 
-        var recipeDrop = document.querySelector(".recipe");
-        var response = recipeObj;
+        var recipeTitle = document.querySelector("#recipe-title");
+        var recipeImg = document.querySelector("#recipe-img");
+        var recipeIngredients = document.querySelector("#recipe-ingredients");
 
-        var random = chooseRandom(response.results);
+        var random = chooseRandom(recipeObj.results);
 
-        recipeDrop.textContent =
-          random.title + " & ingr: " + random.ingredients;
+        recipeTitle.textContent = random.title;
+        recipeImg.src = random.thumbnail;
+        recipeIngredients.textContent = random.ingredients;
       }
     };
     xhr.open("GET", url, true);
@@ -28,13 +29,12 @@ button.addEventListener("click", function() {
   })();
 });
 
-
 function chooseRandom(arr) {
   return arr[Math.floor(Math.random() * 10)];
 }
 
-
 // DEEZER API CALL
+
 
 
 function deezerCall () {
