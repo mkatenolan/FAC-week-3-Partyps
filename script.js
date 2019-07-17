@@ -35,26 +35,53 @@ function chooseRandom(arr) {
 
 // DEEZER API CALL
 
-(function() {
-  var testSearch = "sick tunes";
-  var searchTerms = testSearch.split(" ").join("+");
-  var url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/playlist?q=${searchTerms}`;
+
+
+function deezerCall () {
+  var testSearch = "sick tunes"
+  var searchTerms = testSearch.split(' ').join('+')
+  var url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/playlist?q=${searchTerms}`
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
-    if (xhr.readyState == 4 && xhr.status == 200) {
-      var parsedContent = JSON.parse(xhr.responseText);
-      var totalResults = parsedContent.total; //  Returns number of results from the search
-      var randomPlaylist = chooseRandom(parsedContent.data); //  Returns random playlist out of top 10
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        var parsedContent = JSON.parse(xhr.responseText);
+        var totalResults = parsedContent.total //  Returns number of results from the search
+        var randomPlaylist = chooseRandom(parsedContent.data) //  Returns random playlist out of top 10
 
-      var playlistTitle = randomPlaylist.title; //  Returns selected playlist's title
-      var playlistImage = randomPlaylist.picture_medium; //  Returns selected playlist's cover
-      //
-      var tracklistLink = randomPlaylist.tracklist; //  Returns playlist tracklist link > for second call
-      var playlistTracklist = {}; //  Empty object to
+        var playlistTitle = randomPlaylist.title; //  Returns selected playlist's title
+        var playlistImage = randomPlaylist.picture_medium; //  Returns selected playlist's cover
+        //
+        var tracklistLink = randomPlaylist.tracklist; //  Returns playlist tracklist link > for second call
+        console.log(randomPlaylist);
+        console.log(tracklistLink);
 
-      console.log(singlePlaylist);
     }
+
   };
+
   xhr.open("GET", url, true);
   xhr.send();
-})();
+
+}
+
+// SECOND COSMIC API CALL TO NEW GALAXY
+
+function deezerCallTwo (tracklistLink) {
+var xhs = new XMLHttpRequest();
+xhs.onreadystatechange = function() {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+
+      var parsedTracklist = JSON.parse(xhs.responseText);
+
+      //console.log(parsedTracklist);
+    }
+
+  xhs.open("GET", tracklistLink , true);
+  xhs.send();
+
+  };
+
+};
+
+
+(deezerCall());
