@@ -45,16 +45,16 @@ function chooseRandom(arr) {
   xhr.onreadystatechange = function() {
       if (xhr.readyState == 4 && xhr.status == 200) {
         var parsedContent = JSON.parse(xhr.responseText);
+        var totalResults = parsedContent.total //  Returns number of results from the search
+        var randomPlaylist = chooseRandom(parsedContent.data) //  Returns random playlist out of top 10
 
-
-        var totalResults = parsedContent.total // Returns number of results from the search
-
-        var singlePlaylist = chooseRandom(parsedContent.data)
-        // var playlistTitle = parsedContent.data[randomId].title
-        var playlistImage = singlePlaylist.picture_xl
+        var playlistTitle = randomPlaylist.title; //  Returns selected playlist's title
+        var playlistImage = randomPlaylist.picture_medium; //  Returns selected playlist's cover
+        //
+        var tracklistLink = randomPlaylist.tracklist; //  Returns playlist tracklist link > for second call
+        var playlistTracklist = {}; //  Empty object to
 
         console.log(singlePlaylist);
-
       }
   };
   xhr.open("GET", url, true);
