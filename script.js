@@ -119,3 +119,14 @@ function deezerCallTwo(tracklistLink) {
     xhs.send();
   };
 }
+
+var dropdownButton = document.querySelector("#dropdown");
+var recipeContainer = document.querySelector("#recipe-ingredients")
+dropdownButton.addEventListener("click", function() {
+ if (recipeContainer.style.display === 'none') {
+   recipeContainer.style.display = 'block';
+ } else {
+   recipeContainer.style.display = 'none';
+
+  }
+});
