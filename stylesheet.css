@@ -98,11 +98,14 @@ background-color: #FD5177;
 }
 
 #dropdown {
+  /*
   border:2px solid black;
-  background-color: #f5f2d0;
-  font-size: 1.3em;
   border-radius: 10px;
   font-weight: bold;
+  */
+  border: none;
+  background-color: #f5f2d0;
+  font-size: 1.3em;
 }
 
 #dropdown:hover {
@@ -145,6 +148,9 @@ background-color: #FD5177;
   display:flex;
   justify-content:space-around;
   align-items: center;
+
+  flex-wrap: wrap;
+  overflow-y: scroll;
 }
 
 
@@ -194,6 +200,9 @@ footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
+
+    flex-wrap: wrap;
+
   }
 
   #recipe-img, #playlist-img {
