@@ -57,11 +57,16 @@ npm test
 - [ ] Ensure that no playlist is returned if search term is invalid
 - [ ] Add Easter Egg classes i.e. change CSS in response to certain search terms 
 
-## Approach/Worklfow 
-### Technologies & Tools 
+## Technologies & Tools 
 - methods: TDD (Tape & tap-spec), API calls, CSS grid
 - Languages: vanilla JavaScript, HTML, CSS
 - other: Pair programming, Git and GitHub, npm, command line
+
+## Approach/Worklfow 
+1.) Defined the user journey 
+2.) Drew up software architecture 
+
+
 
 ## What we struggled with
 **Accessing the APIs** 
