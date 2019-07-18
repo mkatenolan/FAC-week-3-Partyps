@@ -106,3 +106,10 @@ function deezerCallTwo(tracklistLink) {
     xhs.send();
   };
 }
+
+// Clear Functionality
+
+buttonClear.addEventListener("click", function() {
+  var searchInput = document.querySelector("#search-query");
+  searchInput.value = "";
+});
