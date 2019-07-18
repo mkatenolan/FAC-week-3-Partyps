@@ -56,8 +56,8 @@ function chooseRandom(arr) {
 // DEEZER API CALL
 
 function deezerCall() {
-  var testSearch = "Eminem";
-  var searchTerms = testSearch.split(" ").join("+");
+  var searchInput = document.querySelector("#search-query").value;
+  var searchTerms = searchInput.split(" ").join("+");
   var url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/playlist?q=${searchTerms}`;
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
@@ -79,7 +79,7 @@ function deezerCall() {
       var image = document.querySelector("#playlist-img");
       var playlist = document.querySelector("#playlist-songs");
 
-      title.textContent = "Suggested playlist: " + playlistTitle;
+      playlist.textContent = "Suggested playlist: " + playlistTitle;
       image.src = playlistImage;
       playlist.href = playlistLink;
     }
