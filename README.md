@@ -71,6 +71,19 @@ npm test
 
 ![Picture of software architecture](https://raw.githubusercontent.com/fac-17/W3-Partyps/master/Images/IMG_0250.JPG)
 
+3.) Studied API docs & tested API fore inputs, outputs etc
+
+4.) Initialised repo, HTML, CSS, JS, JSON files 
+
+5.) Added HTML content, basic JavaScript content
+
+6.) Worked in pairs to create API requests
+
+7.) Added DOM manipulations
+
+8.) Refactored into smaller (pure) functions and tested those  
+
+9.) Added CSS styling 
 
 
 ## What we struggled with
@@ -85,3 +98,4 @@ Accessing the playlist tracklist requires a second API call, using a URL parsed 
 - Event Listeners don’t work
 
 ## What we learned
+
