@@ -1,17 +1,13 @@
 var button = document.querySelector("#button-submit");
 var buttonClear = document.querySelector("#button-clear");
 
-//Choose a random element in an array
-function chooseRandom(arr) {
-  return arr[Math.floor(Math.random() * 10)];
-}
-
 // Search Functionality
 button.addEventListener("click", function() {
   var searchInput = document.querySelector("#search-query").value;
   recipeCall(searchInput);
   deezerCall(searchInput);
 });
+
 // Clear Functionality
 buttonClear.addEventListener("click", function() {
   searchInput.value = "";
@@ -20,9 +16,8 @@ buttonClear.addEventListener("click", function() {
 // RECIPE PUPPY API CALL
 function recipeCall(searchTerm) {
   var xhr = new XMLHttpRequest();
-  var url =
-    "https://cors-anywhere.herokuapp.com/http://www.recipepuppy.com/api/?q=" +
-    searchTerm;
+  var url = "http://www.recipepuppy.com/api/?q=";
+  var searchTerms = createSearchTerm(searchTerm);
 
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4 && xhr.status == 200) {
@@ -55,15 +50,15 @@ function recipeCall(searchTerm) {
       addIngredients();
     }
   };
-  xhr.open("GET", url, true);
+  xhr.open("GET", createURL(url, searchTerms), true);
   xhr.send();
 }
 
 // DEEZER API CALL
 
 function deezerCall(searchTerm) {
-  var searchTerms = searchTerm.split(" ").join("+");
-  var url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/playlist?q=${searchTerms}`;
+  var searchTerms = createSearchTerm(searchTerm);
+  var url = `https://api.deezer.com/search/playlist?q=`;
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4 && xhr.status == 200) {
@@ -87,7 +82,7 @@ function deezerCall(searchTerm) {
     }
   };
 
-  xhr.open("GET", url, true);
+  xhr.open("GET", createURL(url, searchTerms), true);
   xhr.send();
 }
 
@@ -107,9 +102,3 @@ function deezerCallTwo(tracklistLink) {
   };
 }
 
-// Clear Functionality
-
-buttonClear.addEventListener("click", function() {
-  var searchInput = document.querySelector("#search-query");
-  searchInput.value = "";
-});
