@@ -69,7 +69,7 @@ npm test
 2.) Drew up software architecture 
 
 
-!(Picture of software architecture)["https://github.com/fac-17/W3-Partyps/blob/master/Images/IMG_0250.JPG?raw=true"]
+![Picture of software architecture](https://raw.githubusercontent.com/fac-17/W3-Partyps/master/Images/IMG_0250.JPG)
 
 
 
