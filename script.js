@@ -104,6 +104,5 @@ function deezerCallTwo(tracklistLink) {
   };
 }
 
-};
 
 deezerCall();
