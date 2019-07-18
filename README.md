@@ -10,12 +10,19 @@
 To start the project on your computer, you need to:
 
 Clone the repository :
-git clone https://github.com/fac-17/ABCD-week2-project.git
+```
+git clone https://github.com/fac-17/W3-Partyps.git
+```
 Install NPM :
+```
 npm install
+```
+
 Use NPM to install TAPE on your computer and work through the test file: npm i -D tape and npm i -D tap-spec
 Then, to run the test :
+```
 npm test
+```
 
 ## User Journey 
 **Happy Scenario** 
@@ -40,6 +47,7 @@ npm test
 - [x] Wrte end execute test for pure functions 
 - [x] Use grid & flexbox for app layout 
 - [x] Make app responsive/mobile friendly
+- [ ] Add a drop down menu of predefined themes
 - [ ] Improve accessibilty 
 - [ ] Add button to expand recipe/playlist sections and display more content 
 
@@ -56,5 +64,14 @@ npm test
 - other: Pair programming, Git and GitHub, npm, command line
 
 ## What we struggled with
+**Accessing the APIs** 
+The CORS specification requires all CORS requests to include an Origin header in every request.  In order to overcome this we needed to add a CORS proxy to the start of our URL. A CORS proxy is a service that allows developers (probably you) to access resources from other websites, without having to own that website.
+
+**Second API call within the first call**
+Accessing the playlist tracklist requires a second API call, using a URL parsed from the initial API call. Waterfall…?
+
+**Initiliasing Test File**
+- How do we export the whole file so that we can test the pure functions?
+- Event Listeners don’t work
 
 ## What we learned
