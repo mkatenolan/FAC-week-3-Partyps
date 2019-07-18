@@ -13,8 +13,6 @@ button.addEventListener("click", function() {
     xhr.onreadystatechange = function() {
       if (xhr.readyState == 4 && xhr.status == 200) {
         var recipeObj = JSON.parse(xhr.responseText);
-
-        var recipeTitle = document.querySelector("#recipe-title");
         var recipeImg = document.querySelector("#recipe-img");
         var recipeIngredients = document.querySelector("#recipe-ingredients");
         var recipeLink = document.querySelector("#recipe-link");
@@ -27,6 +25,11 @@ button.addEventListener("click", function() {
           recipeIngredients.appendChild(listItem);
         }
 
+        function addIngredients() {
+          recipeIngredients.textContent = "";
+          ingredients.forEach(c => listCreation(c));
+        }
+
         if (random.thumbnail) {
           recipeImg.src = random.thumbnail;
         } else {
@@ -37,7 +40,7 @@ button.addEventListener("click", function() {
         recipeLink.textContent = random.title;
         recipeLink.href = random.href;
 
-        ingredients.forEach(c => listCreation(c));
+        addIngredients();
       }
     };
     xhr.open("GET", url, true);
