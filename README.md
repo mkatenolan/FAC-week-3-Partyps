@@ -62,6 +62,13 @@ npm test
 - Languages: vanilla JavaScript, HTML, CSS
 - other: Pair programming, Git and GitHub, npm, command line
 
+## Third Party Services 
+[Recipe Puppy](http://www.recipepuppy.com/) 
+Recipe Puppy is an ingredient based recipe search engine
+
+[Deezer](https://developers.deezer.com/login?redirect=/api/explorer) 
+Deezer is a simple API that gives access to artists, albums, playlists, etc.
+
 ## Approach/Worklfow 
 1.) Defined the user journey
 
@@ -96,6 +103,9 @@ Accessing the playlist tracklist requires a second API call, using a URL parsed 
 **Initiliasing Test File**
 - How do we export the whole file so that we can test the pure functions?
 - Event Listeners don’t work
+
+**Request limit** 
+Exceeded API requests allowed per hour. We had to stop and wait until hour was over. :confused:
 
 ## What we learned
 
