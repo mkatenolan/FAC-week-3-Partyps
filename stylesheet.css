@@ -8,12 +8,13 @@ body {
  display: grid;
  grid-template-columns: repeat(6, 1fr);
  grid-template-rows: repeat(8, 1fr);
- font-family: 'Fredericka the Great', cursive;
+ font-family: 'Lobster', cursive;
  height: 100vh;
  width: 100vw;
  margin: 0px;
- background-image:url("images/Partyps background compressed.jpeg");
+ background-image:url("Images/Partyps background compressed.jpeg");
  background-size:cover;
+ grid-row-gap: 10px;
 }
 
 /* Title */
@@ -22,6 +23,7 @@ header {
   font-size: 1.5rem;
   grid-column: 1/7;
   grid-row: 1/2;
+  margin: auto;
 }
 
 /* Search bar */
@@ -35,9 +37,6 @@ header {
 
 }
 
-
-
-
 #search-query {
 flex-grow: 0.3;
 -webkit-appearance: none;
@@ -50,23 +49,24 @@ height:50px;
 
 #button-submit {
 
-
 }
 
-
 /* Playlist area */
-
 
 .playlist {
   grid-column: 1/7;
   grid-row: 4/6;
   background-color: #f5f2d0 ;
-
-
+  margin: 0px 15px;
+  border-radius:10px;
+  /* pulled from desktop - to be modified? */
+  display:flex;
+  justify-content:space-around;
+  align-items: center;
 }
 
-#playlist-img {
-  max-width:40%;
+#playlist-img, #recipe-img {
+  max-width:20%;
   padding: 0;
   margin: 0;
   border-radius: 50%;
@@ -78,22 +78,20 @@ height:50px;
 #playlist-link {
 }
 
-
 /* Recipe area */
 
 .recipe {
   grid-column: 1/7;
   grid-row: 6/8;
   background-color: #f5f2d0;
-
+  margin: 0px 15px;
+  /* Pulled from desktop: to be modified? */
+  border-radius:10px;
+  display:flex;
+  justify-content:space-around;
+  align-items: center;
 }
 
-#recipe-img {
-  max-width:40%;
-  padding: 0;
-  margin: 0;
-  border-radius: 50%;
-}
 
 #recipe-title {
 
@@ -145,6 +143,9 @@ footer {
     align-items: center;
 
   }
+
+
+
   .recipe {
     grid-column: 5/8;
     grid-row: 3/6;
@@ -154,6 +155,13 @@ footer {
     align-items: center;
 
 
+  }
+
+  #recipe-img, #playlist-img {
+    max-width:40%;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
   }
 
   footer {
