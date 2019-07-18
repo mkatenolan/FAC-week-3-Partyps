@@ -97,7 +97,17 @@ background-color: #FD5177;
   background-color: #FD5177;
 }
 
+#dropdown {
+  border:2px solid black;
+  background-color: #f5f2d0;
+  font-size: 1.3em;
+  border-radius: 10px;
+  font-weight: bold;
+}
 
+#dropdown:hover {
+  background-color: #FD5177;
+}
 
 
 /* Playlist area */
@@ -123,12 +133,6 @@ background-color: #FD5177;
   border-radius: 50%;
 }
 
-#playlist-title {
-}
-
-#playlist-link {
-}
-
 /* Recipe area */
 
 .recipe {
@@ -143,13 +147,6 @@ background-color: #FD5177;
   align-items: center;
 }
 
-
-#recipe-title {
-}
-
-#recipe-ingredients{
-
-}
 
 /* Footer */
 
