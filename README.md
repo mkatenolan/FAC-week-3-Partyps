@@ -1,12 +1,21 @@
 # W3-Partyps
 
 ## The Team 
-@Albadylic 
-@mkatenolan
-@victormasson21 
-@LaLeonie
+- @Albadylic 
+- @mkatenolan
+- @victormasson21 
+- @LaLeonie
 
 ## Installation manual 
+To start the project on your computer, you need to:
+
+Clone the repository :
+git clone https://github.com/fac-17/ABCD-week2-project.git
+Install NPM :
+npm install
+Use NPM to install TAPE on your computer and work through the test file: npm i -D tape and npm i -D tap-spec
+Then, to run the test :
+npm test
 
 ## User Journey 
 **Happy Scenario** 
@@ -24,26 +33,27 @@
 
 ## Goals
 ### MVP Goals
-[x] Research & understand API documents
-[x] Create at least two APIs using the XMLHttpRequest method
-[x] Refactor JS file and put pure functions into separate file 
-[x] Wrte end execute test for pure functions 
-[x] Use grid & flexbox for app layout 
-[x] Make app responsive/mobile friendly
-[ ] Improve accessibilty 
-[ ] Add button to expand recipe/playlist sections and display more content 
+- [x] Draw up software architecture
+- [x] Research & understand API documents
+- [x] Create at least two APIs using the XMLHttpRequest method
+- [x] Refactor JS file and put pure functions into separate file 
+- [x] Wrte end execute test for pure functions 
+- [x] Use grid & flexbox for app layout 
+- [x] Make app responsive/mobile friendly
+- [ ] Improve accessibilty 
+- [ ] Add button to expand recipe/playlist sections and display more content 
 
 
 ### Stretch Goals
-[ ] Improve playlist API request so that search term must be included in the playlist title 
-[ ] Ensure that no playlist is returned if search term is invalid
-[ ] Add Easter Egg classes i.e. change CSS in response to certain search terms 
+- [ ] Improve playlist API request so that search term must be included in the playlist title 
+- [ ] Ensure that no playlist is returned if search term is invalid
+- [ ] Add Easter Egg classes i.e. change CSS in response to certain search terms 
 
 ## Approach/Worklfow 
 ### Technologies & Tools 
-TDD (Tape & tap-spec), API calls, CSS grid
-vanilla JavaScript, HTML, CSS
-Pair programming, Git and GitHub, npm, command line
+- methods: TDD (Tape & tap-spec), API calls, CSS grid
+- Languages: vanilla JavaScript, HTML, CSS
+- other: Pair programming, Git and GitHub, npm, command line
 
 ## What we struggled with
 
