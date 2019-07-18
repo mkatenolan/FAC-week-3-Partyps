@@ -24,6 +24,8 @@ button.addEventListener("click", function() {
   }
 });
 
+
+
 // Clear Functionality
 buttonClear.addEventListener("click", function() {
   var searchInput = document.querySelector("#search-query");
@@ -68,10 +70,11 @@ function recipeCall(searchTerm) {
         recipeImg.src = randomRecipe.thumbnail;
       } else {
         recipeImg.src =
-          "https://images.pexels.com/photos/356079/pexels-photo-356079.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260";
+          "Images/default-food.png";
       }
       recipeLink.textContent = randomRecipe.title;
       recipeLink.href = randomRecipe.href;
+      dropdownButton.style.display = 'block';
       addIngredients();
     }
   };
@@ -120,8 +123,12 @@ function deezerCallTwo(tracklistLink) {
   };
 }
 
+
+/* HIDE AND DISPLAY INGREDIENTS */
+
 var dropdownButton = document.querySelector("#dropdown");
 var recipeContainer = document.querySelector("#recipe-ingredients")
+
 dropdownButton.addEventListener("click", function() {
  if (recipeContainer.style.display === 'none') {
    recipeContainer.style.display = 'block';
