@@ -38,7 +38,7 @@ function chooseRandom(arr) {
 
 
 function deezerCall () {
-  var testSearch = "sick tunes"
+  var testSearch = "Eminem"
   var searchTerms = testSearch.split(' ').join('+')
   var url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/playlist?q=${searchTerms}`
   var xhr = new XMLHttpRequest();
@@ -60,6 +60,11 @@ function deezerCall () {
       var title =  document.querySelector("#playlist-title");
       var image =  document.querySelector("#playlist-img");
       var playlist = document.querySelector("#playlist-songs");
+
+      title.textContent = "Suggested playlist: " + playlistTitle;
+      image.src = playlistImage;
+      playlist.href = playlistLink;
+
     }
 
   };
@@ -89,4 +94,4 @@ xhs.onreadystatechange = function() {
 };
 
 
-(deezerCall());
+deezerCall();
