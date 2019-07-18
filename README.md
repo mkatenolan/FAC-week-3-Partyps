@@ -62,10 +62,35 @@ npm test
 - Languages: vanilla JavaScript, HTML, CSS
 - other: Pair programming, Git and GitHub, npm, command line
 
+## Third Party Services 
+[Recipe Puppy](http://www.recipepuppy.com/) 
+Recipe Puppy is an ingredient based recipe search engine
+
+[Deezer](https://developers.deezer.com/login?redirect=/api/explorer) 
+Deezer is a simple API that gives access to artists, albums, playlists, etc.
+
 ## Approach/Worklfow 
-1.) Defined the user journey 
+1.) Defined the user journey
+
+
 2.) Drew up software architecture 
 
+
+![Picture of software architecture](https://raw.githubusercontent.com/fac-17/W3-Partyps/master/Images/IMG_0250.JPG)
+
+3.) Studied API docs & tested API fore inputs, outputs etc
+
+4.) Initialised repo, HTML, CSS, JS, JSON files 
+
+5.) Added HTML content, basic JavaScript content
+
+6.) Worked in pairs to create API requests
+
+7.) Added DOM manipulations
+
+8.) Refactored into smaller (pure) functions and tested those  
+
+9.) Added CSS styling 
 
 
 ## What we struggled with
@@ -79,4 +104,8 @@ Accessing the playlist tracklist requires a second API call, using a URL parsed 
 - How do we export the whole file so that we can test the pure functions?
 - Event Listeners don’t work
 
+**Request limit** 
+Exceeded API requests allowed per hour. We had to stop and wait until hour was over. :confused:
+
 ## What we learned
+
