@@ -2,20 +2,21 @@
 <html lang="en" dir="ltr">
   <head>
     <link href="stylesheet.css" type="text/css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Caveat+Brush&display=swap" rel="stylesheet">
     <meta charset="utf-8" />
     <title></title>
   </head>
   <body>
-    <header><h1>Welcome to Partyps!</h1></header>
+    <header>
+      <h1>Welcome to Partyps!</h1>
+      <h3>Enter a theme to get started</h3>
+    </header>
 
     <section class="search">
       <label for="search-query"></label>
-      <input type="search" id="search-query" />
-      <button class="button" id="button-clear">Clear</button>
-      <button class="button" id="button-submit">Let's Go!</button>
+      <input type="search" aria-label="Input field" id="search-query" autofocus="autofocus" value=""/>
+      <button class="button" aria-label="Search button" id="button-submit">Let's Go!</button>
+      <button class="button" aria-label="Clear" id="button-clear">Clear</button>
     </section>
 
     <section class="playlist">
