@@ -63,8 +63,13 @@ npm test
 - other: Pair programming, Git and GitHub, npm, command line
 
 ## Approach/Worklfow 
-1.) Defined the user journey 
+1.) Defined the user journey
+
+
 2.) Drew up software architecture 
+
+
+!(Picture of software architecture)["https://github.com/fac-17/W3-Partyps/blob/master/Images/IMG_0250.JPG?raw=true"]
 
 
 
