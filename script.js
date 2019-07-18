@@ -43,6 +43,7 @@ function recipeCall(searchTerm) {
       var recipeObj = JSON.parse(xhr.responseText);
       var randomRecipe = chooseRandom(recipeObj.results); // Choose a random result
 
+      found = true;
       // Check if there are no results
       if (randomRecipe == undefined) {
         alert("Please put in a proper party theme!");
