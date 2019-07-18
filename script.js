@@ -102,4 +102,3 @@ function deezerCallTwo(tracklistLink) {
   };
 }
 
-module.exports = chooseRandom;
