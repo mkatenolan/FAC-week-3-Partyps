@@ -16,22 +16,25 @@ button.addEventListener("click", function() {
         var recipeTitle = document.querySelector("#recipe-title");
         var recipeImg = document.querySelector("#recipe-img");
         var recipeIngredients = document.querySelector("#recipe-ingredients");
+        var recipeLink = document.querySelector("#recipe-link");
+        var random = chooseRandom(recipeObj.results);
+        var ingredients = random.ingredients.split(",");
 
         function listCreation(str) {
           var listItem = document.createElement("li");
           listItem.textContent = str;
-          document.getElementById("recipe-ingredients").appendChild(listItem);
+          recipeIngredients.appendChild(listItem);
         }
-        var random = chooseRandom(recipeObj.results);
+
         if (random.thumbnail) {
           recipeImg.src = random.thumbnail;
         } else {
           recipeImg.src =
             "https://images.pexels.com/photos/356079/pexels-photo-356079.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260";
         }
-
-        var ingredients = random.ingredients.split(",");
-        recipeTitle.textContent = random.title;
+        console.log(random);
+        recipeLink.textContent = random.title;
+        recipeLink.href = random.href;
 
         ingredients.forEach(c => listCreation(c));
       }
