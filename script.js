@@ -1,4 +1,4 @@
-var button = document.querySelector("#button-submit");
+/* var button = document.querySelector("#button-submit");
 
 button.addEventListener("click", function() {
   var searchInput = document.querySelector("#search-query").value;
@@ -28,7 +28,7 @@ button.addEventListener("click", function() {
     xhr.send();
   })();
 });
-
+*/
 function chooseRandom(arr) {
   return arr[Math.floor(Math.random() * 10)];
 }
@@ -50,11 +50,16 @@ function deezerCall () {
 
         var playlistTitle = randomPlaylist.title; //  Returns selected playlist's title
         var playlistImage = randomPlaylist.picture_medium; //  Returns selected playlist's cover
-        //
-        var tracklistLink = randomPlaylist.tracklist; //  Returns playlist tracklist link > for second call
-        console.log(randomPlaylist);
-        console.log(tracklistLink);
+        var playlistLink = randomPlaylist.link;
 
+      //  var tracklistLink = randomPlaylist.tracklist; Returns playlist tracklist link > for second call
+        console.log(randomPlaylist);
+        console.log(playlistLink);
+        //console.log(tracklistLink);
+
+      var title =  document.querySelector("#playlist-title");
+      var image =  document.querySelector("#playlist-img");
+      var playlist = document.querySelector("#playlist-songs");
     }
 
   };
