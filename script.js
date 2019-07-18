@@ -1,11 +1,17 @@
 var button = document.querySelector("#button-submit");
 var buttonClear = document.querySelector("#button-clear");
+var found = true;
 
 // Search Functionality
 button.addEventListener("click", function() {
   var searchInput = document.querySelector("#search-query").value;
-  recipeCall(searchInput);
-  deezerCall(searchInput);
+  console.log(searchInput);
+  if (searchInput == "") {
+    alert("Please put in a party theme!");
+  } else {
+    recipeCall(searchInput);
+    deezerCall(searchInput);
+  }
 });
 
 // Clear Functionality
@@ -26,8 +32,14 @@ function recipeCall(searchTerm) {
       var recipeImg = document.querySelector("#recipe-img");
       var recipeIngredients = document.querySelector("#recipe-ingredients");
       var recipeLink = document.querySelector("#recipe-link");
-      var random = chooseRandom(recipeObj.results);
-      var ingredients = random.ingredients.split(",");
+      var randomRecipe = chooseRandom(recipeObj.results);
+      if (randomRecipe == undefined) {
+        alert("Please put in a proper party theme!");
+        var searchInput = document.querySelector("#search-query");
+        searchInput.value = "";
+        found = false;
+      }
+      var ingredients = randomRecipe.ingredients.split(",");
 
       function listCreation(str) {
         var listItem = document.createElement("li");
@@ -40,14 +52,14 @@ function recipeCall(searchTerm) {
         ingredients.forEach(c => listCreation(c));
       }
 
-      if (random.thumbnail) {
-        recipeImg.src = random.thumbnail;
+      if (randomRecipe.thumbnail) {
+        recipeImg.src = randomRecipe.thumbnail;
       } else {
         recipeImg.src =
           "https://images.pexels.com/photos/356079/pexels-photo-356079.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260";
       }
-      recipeLink.textContent = random.title;
-      recipeLink.href = random.href;
+      recipeLink.textContent = randomRecipe.title;
+      recipeLink.href = randomRecipe.href;
       addIngredients();
     }
   };
@@ -71,15 +83,15 @@ function deezerCall(searchTerm) {
       var playlistLink = randomPlaylist.link;
 
       //  var tracklistLink = randomPlaylist.tracklist; Returns playlist tracklist link > for second call
-      console.log(randomPlaylist);
-      console.log(playlistLink);
-      //console.log(tracklistLink);
-      var image = document.querySelector("#playlist-img");
-      var playlist = document.querySelector("#playlist-songs");
 
-      playlist.textContent = "Suggested playlist: " + playlistTitle;
-      image.src = playlistImage;
-      playlist.href = playlistLink;
+      if (found) {
+        var image = document.querySelector("#playlist-img");
+        var playlist = document.querySelector("#playlist-songs");
+
+        playlist.textContent = "Suggested playlist: " + playlistTitle;
+        image.src = playlistImage;
+        playlist.href = playlistLink;
+      }
     }
   };
 
