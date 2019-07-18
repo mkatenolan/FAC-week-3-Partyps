@@ -1,4 +1,4 @@
-var button = document.querySelector("#button-submit");
+ var button = document.querySelector("#button-submit");
 
 button.addEventListener("click", function() {
   var searchInput = document.querySelector("#search-query").value;
@@ -50,23 +50,37 @@ function chooseRandom(arr) {
 
 // DEEZER API CALL
 
-function deezerCall() {
-  var testSearch = "sick tunes";
-  var searchTerms = testSearch.split(" ").join("+");
-  var url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/playlist?q=${searchTerms}`;
+
+
+
+function deezerCall () {
+  var testSearch = "Eminem"
+  var searchTerms = testSearch.split(' ').join('+')
+  var url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/playlist?q=${searchTerms}`
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
-    if (xhr.readyState == 4 && xhr.status == 200) {
-      var parsedContent = JSON.parse(xhr.responseText);
-      var totalResults = parsedContent.total; //  Returns number of results from the search
-      var randomPlaylist = chooseRandom(parsedContent.data); //  Returns random playlist out of top 10
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        var parsedContent = JSON.parse(xhr.responseText);
+        var totalResults = parsedContent.total //  Returns number of results from the search
+        var randomPlaylist = chooseRandom(parsedContent.data) //  Returns random playlist out of top 10
 
-      var playlistTitle = randomPlaylist.title; //  Returns selected playlist's title
-      var playlistImage = randomPlaylist.picture_medium; //  Returns selected playlist's cover
-      //
-      var tracklistLink = randomPlaylist.tracklist; //  Returns playlist tracklist link > for second call
-      console.log(randomPlaylist);
-      console.log(tracklistLink);
+        var playlistTitle = randomPlaylist.title; //  Returns selected playlist's title
+        var playlistImage = randomPlaylist.picture_medium; //  Returns selected playlist's cover
+        var playlistLink = randomPlaylist.link;
+
+      //  var tracklistLink = randomPlaylist.tracklist; Returns playlist tracklist link > for second call
+        console.log(randomPlaylist);
+        console.log(playlistLink);
+        //console.log(tracklistLink);
+
+      var title =  document.querySelector("#playlist-title");
+      var image =  document.querySelector("#playlist-img");
+      var playlist = document.querySelector("#playlist-songs");
+
+      title.textContent = "Suggested playlist: " + playlistTitle;
+      image.src = playlistImage;
+      playlist.href = playlistLink;
+
     }
   };
 
@@ -89,5 +103,7 @@ function deezerCallTwo(tracklistLink) {
     xhs.send();
   };
 }
+
+};
 
 deezerCall();
