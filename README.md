@@ -48,8 +48,8 @@ npm test
 - [x] Use grid & flexbox for app layout 
 - [x] Make app responsive/mobile friendly
 - [ ] Add a drop down menu of predefined themes
-- [ ] Improve accessibilty 
-- [ ] Add button to expand recipe/playlist sections and display more content 
+- [x] Improve accessibilty 
+- [x] Add button to expand recipe/playlist sections and display more content 
 
 
 ### Stretch Goals
@@ -108,4 +108,8 @@ Accessing the playlist tracklist requires a second API call, using a URL parsed 
 Exceeded API requests allowed per hour. We had to stop and wait until hour was over. :confused:
 
 ## What we learned
+
+- How to construct an API request 
+- How to throw a great party 
+- How to abstract code + build in smaller modules
 
