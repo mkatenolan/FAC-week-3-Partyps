@@ -65,6 +65,10 @@ h3 {
   color: #fd5177;
 }
 
+#search-query:focus {
+  outline-color: #fd5177;
+}
+
 #button-clear,
 #button-submit {
   width: 70px;
