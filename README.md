@@ -112,4 +112,5 @@ Exceeded API requests allowed per hour. We had to stop and wait until hour was o
 - How to construct an API request 
 - How to throw a great party 
 - How to abstract code + build in smaller modules
+- How to export functions for testing
 
