@@ -103,13 +103,16 @@ background-color: #FD5177;
   border-radius: 10px;
   font-weight: bold;
   */
-  border: none;
-  background-color: #f5f2d0;
+
+  background-color: #FD5177;
   font-size: 1.3em;
+  border-radius: 10px;
+  border: 4px #FD5177 solid;
 }
 
 #dropdown:hover {
-  background-color: #FD5177;
+  background-color: #44B790;
+  border: 4px #44B790 solid;
 }
 
 
@@ -131,6 +134,7 @@ background-color: #FD5177;
 
 #playlist-img, #recipe-img {
   max-height:90%;
+
   padding: 0;
   margin: 0;
   border-radius: 50%;
@@ -149,7 +153,6 @@ background-color: #FD5177;
   justify-content:space-around;
   align-items: center;
 
-  flex-wrap: wrap;
   overflow-y: scroll;
 }
 
@@ -182,27 +185,28 @@ footer {
     grid-row: 2/3;
   }
 
-  .playlist {
+  .playlist, .recipe {
     display: flex;
-    grid-column: 2/5;
-    grid-row: 3/6;
-    border-radius: 6%;
+    flex-direction: column;
     justify-content: space-around;
+    /* flex-wrap: wrap; */
     align-items: center;
+    border-radius: 6%;
+  }
+
+  #recipe-ingredients {
+
   }
 
 
+  .playlist {
+    grid-column: 2/5;
+    grid-row: 3/6;
+  }
 
   .recipe {
     grid-column: 5/8;
     grid-row: 3/6;
-    border-radius: 6%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-    flex-wrap: wrap;
-
   }
 
   #recipe-img, #playlist-img {
