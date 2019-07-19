@@ -21,9 +21,5 @@
   "devDependencies": {
     "tap-spec": "^5.0.0",
     "tape": "^4.11.0"
-  },
-  "dependencies": {
-    "D": "^1.0.0",
-    "nodemon": "^1.19.1"
   }
 }
