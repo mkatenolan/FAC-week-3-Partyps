@@ -12,15 +12,18 @@ var recipeLink = document.querySelector("#recipe-link");
 var image = document.querySelector("#playlist-img");
 var playlist = document.querySelector("#playlist-songs");
 
+//Search Element
+var searchInput = document.querySelector("#search-query");
+
 // Search Functionality
 button.addEventListener("click", function() {
-  var searchInput = document.querySelector("#search-query").value;
-  console.log(searchInput);
-  if (searchInput == "") {
+  var searchValue = searchInput.value;
+  console.log(searchValue);
+  if (searchValue == "") {
     alert("Please put in a party theme!");
   } else {
-    recipeCall(searchInput);
-    deezerCall(searchInput);
+    recipeCall(searchValue);
+    deezerCall(searchValue);
   }
 });
 
@@ -28,7 +31,6 @@ button.addEventListener("click", function() {
 
 // Clear Functionality
 buttonClear.addEventListener("click", function() {
-  var searchInput = document.querySelector("#search-query");
   searchInput.value = "";
 });
 
@@ -47,7 +49,7 @@ function recipeCall(searchTerm) {
       // Check if there are no results
       if (randomRecipe == undefined) {
         alert("Please put in a proper party theme!");
-        var searchInput = document.querySelector("#search-query");
+
         searchInput.value = "";
         found = false;
       }
