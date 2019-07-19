@@ -27,8 +27,6 @@ button.addEventListener("click", function() {
   }
 });
 
-
-
 // Clear Functionality
 buttonClear.addEventListener("click", function() {
   searchInput.value = "";
@@ -72,12 +70,11 @@ function recipeCall(searchTerm) {
       if (randomRecipe.thumbnail) {
         recipeImg.src = randomRecipe.thumbnail;
       } else {
-        recipeImg.src =
-          "Images/default-food.png";
+        recipeImg.src = "Images/default-food.png";
       }
       recipeLink.textContent = randomRecipe.title;
       recipeLink.href = randomRecipe.href;
-      dropdownButton.style.display = 'block';
+      dropdownButton.style.display = "block";
       addIngredients();
     }
   };
@@ -110,33 +107,15 @@ function deezerCall(searchTerm) {
   xhr.send();
 }
 
-// SECOND COSMIC API CALL TO NEW GALAXY
-
-function deezerCallTwo(tracklistLink) {
-  var xhs = new XMLHttpRequest();
-  xhs.onreadystatechange = function() {
-    if (xhr.readyState == 4 && xhr.status == 200) {
-      var parsedTracklist = JSON.parse(xhs.responseText);
-
-      //console.log(parsedTracklist);
-    }
-
-    xhs.open("GET", tracklistLink, true);
-    xhs.send();
-  };
-}
-
-
 /* HIDE AND DISPLAY INGREDIENTS */
 
 var dropdownButton = document.querySelector("#dropdown");
-var recipeContainer = document.querySelector("#recipe-ingredients")
+var recipeContainer = document.querySelector("#recipe-ingredients");
 
 dropdownButton.addEventListener("click", function() {
- if (recipeContainer.style.display === 'none') {
-   recipeContainer.style.display = 'block';
- } else {
-   recipeContainer.style.display = 'none';
-
+  if (recipeContainer.style.display === "none") {
+    recipeContainer.style.display = "block";
+  } else {
+    recipeContainer.style.display = "none";
   }
 });
