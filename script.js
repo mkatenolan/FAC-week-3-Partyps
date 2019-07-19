@@ -30,6 +30,7 @@ button.addEventListener("click", function() {
 // Clear Functionality
 buttonClear.addEventListener("click", function() {
   searchInput.value = "";
+  searchInput.focus();
 });
 
 // RECIPE PUPPY API CALL
