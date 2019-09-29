@@ -1,4 +1,6 @@
-# W3-Partyps
+# FAC- week 3: API calls on the front-end
+
+![](https://i.imgur.com/2eXxx52.jpg)
 
 ## The Team 
 - @Albadylic 
